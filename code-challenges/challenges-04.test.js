@@ -7,11 +7,7 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  const newArr = [];
-  arr.forEach(num=>{
-    newArr.push(num +=2)
-  });
-  return newArr;
+  // Solution code here...
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -22,8 +18,7 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  const answer = /[w]/;
-  return answer.test(str);
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,8 +34,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  const answer = /\d/;
-  return answer.test(input);
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,8 +45,7 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  const answer = /\world\b/;
-  return answer.test(input);
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +57,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  
+  regex = /\b{A-Z][a-z]+/g;
+    let array = str.match(regex);
+    return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
