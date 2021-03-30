@@ -55,7 +55,7 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  charArray.sort((a, b)=>{
+  charArray.sort((a, b) => {
     if (a.children.length === b.children.length) {
       if (a.house < b.house) return -1;
       if (a.house > b.house) return 1;
@@ -77,9 +77,9 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
-const getCourseKeys = (obj) =>{
-  return Object.keys(obj);
 
+const getCourseKeys = (obj) => {
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,12 +91,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  for (let magicKey in obj) {
-    if (obj[magicKey] === value) {
-      return true;
-    }
-  }
-  return false;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
