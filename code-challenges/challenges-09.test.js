@@ -19,12 +19,12 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  const newArr = [];
-  for (let [key,value] of Object.entries(obj)){
-    newArr.push(`<li>${key}: ${value}</li>`);
+  let result = [];
+  for (let key in obj) {
+    result.push(`<li>${key}: ${obj[key]}</li>`);
   }
-  return newArr;
-};
+  return result;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,11 +33,12 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => arr.reduce ((answerSoFar, value)=>{
-  answerSoFar = answerSoFar + value;
-  console.log(answerSoFar);
-  return answerSoFar;
-},0);
+const addValues = (arr) => {
+  return arr.reduce((what, why) => {
+    what += why;
+    return what;
+  }, 0);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -50,16 +51,13 @@ Write a function named addPurchases that, given an array of objects as input, us
 }
 
 ------------------------------------------------------------------------------------------------ */
-// describe('Testing challenge 3', () => {
-//   test('It should add the purchase price', () => {
-//     expect(addPurchases([{item: 'switch', purchasePrice: 399}, {item: 'toothpaste', purchasePrice: 2}])).toStrictEqual(401);
-//     expect(addPurchases([])).toStrictEqual(0);
-//   });
-// });
-const addPurchases = (arr) => arr.reduce((answerSoFar, value)=>{
-  answerSoFar = answerSoFar + value.purchasePrice;
-  return answerSoFar;
-},0);
+
+const addPurchases = (arr) => {
+  return arr.reduce((acc, val) => {
+    acc += val.purchasePrice;
+    return acc;
+  }, 0);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -68,15 +66,12 @@ Write a function named countNumberOfElements that, given an array as input, uses
 
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
-// describe('Testing challenge 4', () => {
-//   test('It should return the length of the array', () => {
-//     expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
-//   });
-// });
-const countNumberOfElements = (arr) => arr.reduce((answerSoFar, value, idx)=>{
-  answerSoFar = idx + 1;
-  return answerSoFar
-},0);
+
+const countNumberOfElements = (arr) => {
+  return arr.reduce((acc) => {
+    return acc + 1;
+  }, 0);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -134,11 +129,12 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => arr.reduce((answerSoFar,value)=>{
-    answerSoFar.push(value.name);
-  return answerSoFar
-
-},[]);
+const returnNames = (arr) => {
+  return arr.reduce((acc, ele) => {
+    acc.push(ele.name);
+    return acc;
+  }, []);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -147,13 +143,14 @@ Write a function named reversedString that takes in a string and returns a strin
 
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
-// describe('Testing challenge 6', () => {
-//   test('It should return the string with the characters in reverse order', () => {
-//     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
-//   });
-// });
-const reversedString = (str) =>{
-  return str.split('').reduce((rev, char)=> char + rev, '');
+
+const reversedString = (str) => {
+  let arr = str.split('');
+  let reverseArr = arr.reduce((acc, letter) => {
+    acc.unshift(letter);
+    return acc;
+  }, []);
+  return reverseArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
