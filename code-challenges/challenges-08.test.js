@@ -7,13 +7,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
-  let string = str;
-  let stringSplit = string.split("");
-  let stringSplice = stringSplit.splice(-10);
-  return stringSplice
-  // Solution code here...
-}
+const returnTen = (str) => str.split('').splice(-10);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,10 +17,7 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) => arr.filter(num=> typeof(num)==='number');
-  // Solution code here...
-
-
+const typeNum = (arr) => arr.filter(x => typeof(x) === 'number');
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -35,9 +26,7 @@ Write a function named containsAnd that, given an array of strings as input, use
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
-const containsAnd = (arr) => arr.filter( num => num.includes('and'));
-  // Solution code here...
-
+const containsAnd =(arr) => arr.filter( x => x.includes('and'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -47,9 +36,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => arr.filter( num => num % 2 !== 0 );
-  // Solution code here...
-
+const oddValues = (arr) => arr.filter( x => x % 2 !== 0 );
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -62,9 +49,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 
-const filterStringsWithVowels = (arr) => 
-  // Solution code here...
-
+const filterStringsWithVowels = (arr) => arr.filter( str => /[aeiou]/.test(str));
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,9 +60,7 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter( value => !forbiddenValues.includes(value));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
